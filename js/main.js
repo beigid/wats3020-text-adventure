@@ -125,7 +125,7 @@ var storyData = {
         ]
     },
     foodEnd : {
-        text: `You nudge open the cabinet with your nose and find your puppy snacks. Without hesitation, you reach in and rip the bag open with a little too much zeal, coating the kitchen tile with puppy treats. You quickly try to eat all the treats all the floor and run into the dining table, knocking over a vase and shattering it immediately upon impact. You're in very big trouble now.`,
+        text: `You nudge open the cabinet with your nose and find your puppy snacks. Without hesitation, you reach in and rip the bag open with a little too much zeal, coating the kitchen tile with puppy treats. You quickly try to eat all the treats and run into the dining table, knocking over a vase and shattering it immediately upon impact. You're in very big trouble now.`,
         choices: [
             {
                 text: `Start over?`,
@@ -168,7 +168,7 @@ var storyData = {
         ]
     },
     adventureEnd : {
-        text: `You roam around the rest of the house but nothing seems to captivate you as much as the ball did. You decide it's been enough rebellious behavior for one day and decide to lay backin your kennel.
+        text: `You roam around the rest of the house but nothing seems to captivate you as much as the ball did. You decide it's been enough rebellious behavior for one day and decide to lay back in your kennel.
                 <br><br>
                 The End`,
         choices: [
@@ -198,7 +198,7 @@ var storyData = {
                 link: `adventureEnd`,                
             }, {
                 text: `Grab it! You were good about the apple, have a little fun?`,
-                link: 'p1'
+                link: 'p7'
             }
         ]
     },
