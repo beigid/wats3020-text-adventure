@@ -50,24 +50,21 @@ function undoChoice() {
 ////////////////////////////////////////////////////////////////////////////////
 
 var storyData = {
-    title: "The Crow and the Fox",
+    title: "Puppy Quest",
     p1: {
-        text: `You are a crow named ${playerName}. You are flying high above the
-                countryside. You see a farm off to the West, and your home forest
-                off to the East.`,
+        text: `You are a puppy named ${playerName}. You are excited as you await your owner to come home from work. You rustle in your kennel and realize that they left the cage unlocked.`,
         choices: [
             {
-                text: `Fly over the farm to the West.`,
+                text: `Rush out into freedom!`,
                 link: 'p2'
             }, {
-                text: `Fly back home to your nest in the forest.`,
+                text: `Stay put, you don't want to get in trouble.`,
                 link: 'homeEnd'
             }
         ]
     },
     homeEnd : {
-        text: `You return home to your comfy roost in the forest canopy and
-                enjoy a hot cup of tea!
+        text: `You enjoy a nice nap curled up in a ball in the safety of your kennel. 
                 <br><br>
                 The End.`,
         choices: [
@@ -78,40 +75,57 @@ var storyData = {
         ]
     },
     p2 : {
-        text: `You fly over the Farm and see a piece of cheese lying on the
-                picnic table. There are no people around that you can see. The
-                cheese looks very tasty, but you are worried there might be a
-                person or, even worse, a CAT lurking somewhere you can't see.`,
+        text: `You run out of the kennel! Freedom awaits! The kitchen is nearby where all your treats are kept, but there is also the doggy door that leads to the backyard.`,
         choices: [
             {
-                text: `Go for the cheese!`,
+                text: `Go check out the kitchen!`,
                 link: 'p3'
             }, {
-                text: `Decide it's not worth the risk and fly back to the forest.`,
+                text: `That backyard looks quite nice...`,
+                link: 'outsideEnd'
+            }, {
+                text: `You've already adventured too far, time to go back to your kennel`,
                 link: 'homeEnd'
             }
         ]
     },
-    p3 : {
-        text: `You swoop down and pluck the cheese from the table. Just as you
-                grab hold of the cheese, the farmer's cat leaps onto the table
-                ahead of you!`,
+    outsideEnd : {
+        text: `You rush through the doggy door and crunch your paws on some dried leaves as you take in the fresh air. The sounds of birds chirping encompass your ears and you close your eyes as a small breeze rolls in. The serenity is cut short when a loud, piercing sound pangs through the calm - the house security alarms.`,
+      choices: [
+          {
+              text: `Run back inside and into your kennel and wait for the alarms to stop.`, 
+              link: 'homeEnd'       
+      }, { 
+              text: `Run off into the freedom your little heart has always dreamed!!!`,
+              link: 'finalEnd'
+         }
+       ]
+     },
+  finalEnd : {
+              text: `You run off into the fields behind your backyard to start your new puppy life. 
+                <br><br>
+                The End.`,
         choices: [
             {
-                text: `Veer off to the left trying to avoid the cat.`,
-                link: 'basketEnd'
-            }, {
-                text: `Fly directly at the cat, full steam ahead!`,
+                text: `Play again?`,
+                link: 'p1'     
+            }
+     ]
+  },
+    p3 : {
+        text: `You arrive at the kitchen and start sniffing around to find something yummy. You stumble upon the cabinet where your treats are usually held.`,
+        choices: [
+            {
+                text: `Leave the treats and keep exploring the house.`,
                 link: 'p4'
+            }, {
+                text: `Take the treats`,
+                link: 'foodEnd'
             }
         ]
     },
-    basketEnd : {
-        text: `You fly directly into a picnic basket, which slams shut behind you.
-                You are stuck until some kind human comes to open the basket.
-                But at least the cat didn't eat you!
-                <br><br>
-                The End`,
+    foodEnd : {
+        text: `You nudge open the cabinet with your nose and find your puppy snacks. Without hesitation, you reach in and rip the bag open with a little too much zeal, coating the kitchen tile with puppy treats. You quickly try to eat all the treats all the floor and run into the dining table, knocking over a vase and shattering it immediately upon impact. You're in very big trouble now.`,
         choices: [
             {
                 text: `Start over?`,
@@ -120,39 +134,41 @@ var storyData = {
         ]
     },
     p4 : {
-        text: `You zoom towards the cat, who is surprised by the direct approach
-                and leaps off the table. You pull up sharply and make it over the
-                big oak tree to a safe cruising altitude. The sun is shining,
-                the wind is beneath your wings, and you have a beak full of
-                cheese.`,
+        text: `As you explore the rest of the house, you notice a hissing sound and quickly turn around. It's Tubs, the family cat that isn't a fan of your newfound presense in the household.`,
         choices: [
             {
-                text: `Find somewhere nice to eat your cheese.`,
+                text: `Leave him alone and continue through the house.`,
                 link: 'p5'
+            }, {
+                text: `This is your house too! Show him your mighty roar!`,
+                link: 'catEnd'
             }
         ]
     },
+    catEnd : {
+       text: `Tubs is terrified of your roar and runs for his life! He runs as fast as he can out the doggy and sets off the alarm. Uh oh...`,
+      choices: [
+        {
+          text: `Start over?`,
+          link: 'p1'
+        }
+      ]
+    },
+
     p5 : {
-        text: `You find a secluded fence post in the middle of a large field
-                full of wildflowers. You decide this will be a wonderful place
-                to have a snack.
-                <br><br>
-                Just as you settle down you see Mr. Fox strolling down the path
-                towards your fence post.`,
+        text: `You ignore Tubs and keep walking through the house. You navigate you way to the master bedroom and see a spherical object on the nightstand next to the bed. Is it...? No...it couldn't be...THE BALL?`,
         choices: [
             {
-                text: `Say, "Hello Mr. Fox! Join me for cheese."`,
-                link: 'shareCheese'
+              text: `Maybe go back to your kennel, you've already adventured too much.`,
+                link: 'adventureEnd'
             }, {
-                text: `Keep a wary eye on Mr. Fox.`,
+                text: `Take the ball!!!`,
                 link: 'p6'
             }
         ]
     },
-    shareCheese : {
-        text: `You hop down to the ground and Mr. Fox helps you break the cheese
-                in half. He is very grateful to you for sharing your cheese, and
-                he gives you a lovely ribbon for your nest.
+    adventureEnd : {
+        text: `You roam around the rest of the house but nothing seems to captivate you as much as the ball did. You decide it's been enough rebellious behavior for one day and decide to lay backin your kennel.
                 <br><br>
                 The End`,
         choices: [
@@ -163,38 +179,31 @@ var storyData = {
         ]
     },
     p6 : {
-        text: `Mr. Fox approaches and says, "Hello ${playerName}! It's been so
-                long since we've seen each other. I've missed hearing your
-                lovely singing voice. Won't you sing me a tune before I go?`,
+        text: `You jump up on the nightstand and grab the ball, but it turns out, the spherical object you absolutely believed was a ball was actually an apple, your absolute favorite fruity treat!`,
         choices: [
             {
-                text: `Sing a song for Mr. Fox.`,
-                link: 'dropCheeseEnd'
+                text: `Leave it, maybe your owners want to have it for a snack later? Or maybe Tubs is watching...`,
+                link: 'appleEnd'
             }, {
-                text: `Remain silent.`,
+                text: `Take the apple, no one would never know.`,
                 link: 'p7'
             }
         ]
     },
-    dropCheeseEnd : {
-        text: `You open your beak to sing a lovely song, and your cheese comes
-                tumbling out. Mr. Fox quickly snaps the cheese out of the air
-                as it falls and gobbles it up!
-                <br><br>
-                The End`,
+    appleEnd : {
+        text: `You leave the apple and keep looking around the room for something fun to play with. You poke your little snout inside the closet and see all the shoes laying around. You look at the fuzzy slippers inside the room that look so tempting to gnaw at.`,
         choices: [
             {
-                text: `Start over?`,
+                text: `Boring! Keep adventuring around.`,
+                link: `adventureEnd`,                
+            }, {
+                text: `Grab it! You were good about the apple, have a little fun?`,
                 link: 'p1'
             }
         ]
     },
     p7 : {
-        text: `You remain silent through all of Mr. Fox's flattery. In the end,
-                he knows you won't fall for his tricks, and he leaves you alone.
-                <br><br>
-                Finally able to relax in quiet, you enjoy your well-earned
-                cheese.
+        text: `You take the apple and hurry back to your kennel and tuck it under your blankets. You now can rest easy with a your favorite snack! What a fun and productive adventure, time to sleep!
                 <br><br>
                 The End`,
         choices: [
