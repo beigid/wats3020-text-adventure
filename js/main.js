@@ -116,7 +116,7 @@ var storyData = {
         text: `You arrive at the kitchen and start sniffing around to find something yummy. You stumble upon the cabinet where your treats are usually held.`,
         choices: [
             {
-                text: `Leave the treats and keep exploring the house.`,
+                text: `Ignore the treats and keep exploring the house.`,
                 link: 'p4'
             }, {
                 text: `Take the treats`,
